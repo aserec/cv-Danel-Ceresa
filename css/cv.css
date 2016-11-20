@@ -192,17 +192,17 @@ section.success {
     padding-top: 75px;
   }
 }
-#portfolio .portfolio-item {
+#me .me-item {
   margin: 0 0 15px;
   right: 0;
 }
-#portfolio .portfolio-item .portfolio-link {
+#me .me-item .me-link {
   display: block;
   position: relative;
   max-width: 400px;
   margin: 0 auto;
 }
-#portfolio .portfolio-item .portfolio-link .caption {
+#me .me-item .me-link .caption {
   background: rgba(125, 99, 188, 0.9);
   position: absolute;
   width: 100%;
@@ -212,7 +212,7 @@ section.success {
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
 }
-#portfolio .portfolio-item .portfolio-link .caption:hover {
+#me .me-item .portfolio-link .caption:hover {
   opacity: 1;
 }
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
