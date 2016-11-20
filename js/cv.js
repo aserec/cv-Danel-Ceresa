@@ -67,7 +67,7 @@
     })
 
 
-    $('#other-lang, #other-transversal, #other-technologies').one('click', function() {
+    $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
         showChart($(this));
     });
 
@@ -97,6 +97,8 @@
                 return languages;
             }else if(id==="other-transversal"){
                 return trasnsversals;
+            }else{
+                return personality;
             }
         }
 
