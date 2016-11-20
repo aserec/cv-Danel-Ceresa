@@ -447,11 +447,12 @@ fieldset[disabled] .btn-success.active {
   border: none;
   min-height: 100%;
   padding: 100px 0;
-  text-align: center;
+  font-size: 1.2em;
 }
 .work-modal .modal-content h2 {
   margin: 0;
   font-size: 3em;
+  text-align: center;
 }
 .work-modal .modal-content img {
   margin-bottom: 30px;
