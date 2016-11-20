@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8f06e5d-b7bb-473d-87e3-da21eee4d6df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/cake.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/profile.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/cabin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/circus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/game.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/safe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/work/submarine.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/profile.png" afterPath="$PROJECT_DIR$/img/profile.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -29,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="339" column="57" selection-start-line="339" selection-start-column="57" selection-end-line="339" selection-end-column="57" />
+              <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -721,12 +727,12 @@
       <option name="presentableId" value="Default" />
       <updated>1479663858493</updated>
       <workItem from="1479663860089" duration="1044000" />
-      <workItem from="1479665569867" duration="2450000" />
+      <workItem from="1479665569867" duration="3098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3494000" />
+    <option name="totallyTimeSpent" value="4142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="30" width="1366" height="738" extended-state="6" />
@@ -894,7 +900,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="339" column="57" selection-start-line="339" selection-start-column="57" selection-end-line="339" selection-end-column="57" />
+          <caret line="63" column="68" selection-start-line="63" selection-start-column="68" selection-end-line="63" selection-end-column="68" />
           <folding />
         </state>
       </provider>
