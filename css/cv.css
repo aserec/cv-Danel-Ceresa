@@ -201,6 +201,7 @@ section.success {
   position: relative;
   max-width: 400px;
   margin: 0 auto;
+  min-height: 220px;
 }
 #work .work-item .work-link .caption {
   background: rgba(135, 170, 188, 0.9);
@@ -211,7 +212,6 @@ section.success {
   transition: all ease 0.5s;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
-  min-height: 220px;
 }
 #work .work-item .work-link .caption:hover {
   opacity: 1;
@@ -285,7 +285,7 @@ section.success {
   opacity: 1;
 }
 .floating-label-form-group-with-focus label {
-  color: #baabbc;
+  color: #87aabc;
 }
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eeeeee;
