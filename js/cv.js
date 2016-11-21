@@ -66,23 +66,33 @@
             top: 100
         }
     })
+    $('#ok-image').click(function(){
+        $('#contestModalLink').trigger( "click" );
+    });
+    $('#ko-image').click(function(){
+        slowScroll($(this).data('href'),event);
+    });
 
 
     $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
         showChart($(this));
     });
 
-    function askForContest(element,event){
-        $('#contestModalLink').trigger( "click" );
-
+    function doContest(element,event){
         //slowScroll(element,event);
     }
-    function slowScroll(element,event){
-        var $anchor = element;
+
+    function askForContest(element,event){
+        $('#contestModalLink').trigger( "click" );
+        $('#ok-image').data('href',element.attr('href'));
+        $('#ko-image').data('href',element.attr('href'));
+        //slowScroll(element,event);
+    }
+    function slowScroll(href,event){
         $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+            scrollTop: ($(href).offset().top - 50)
         }, 1250, 'easeInOutExpo');
-        event.preventDefault();
+        if(event!=null){event.preventDefault()};
     }
 
     function showChart(element){
