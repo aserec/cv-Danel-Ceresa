@@ -2,7 +2,7 @@
 
 (function($) {
     "use strict"; // Start of use strict
-
+    var contestDone=false
     var technologies=[
         ['HTML5', 90],
         ['CSS3', 50],
@@ -44,11 +44,12 @@
     ];
 
     $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
         event.preventDefault();
+        if(contestDone){
+            slowScroll($(this),event);
+        }else{
+            askForContest($(this),event);
+        }
     });
 
     $('body').scrollspy({
@@ -70,6 +71,19 @@
     $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
         showChart($(this));
     });
+
+    function askForContest(element,event){
+        $('#contestModalLink').trigger( "click" );
+
+        //slowScroll(element,event);
+    }
+    function slowScroll(element,event){
+        var $anchor = element;
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+        event.preventDefault();
+    }
 
     function showChart(element){
         var abilityArray=getAbilityArrayFromElementId(element[0].id);
