@@ -3,6 +3,7 @@
 (function($) {
     "use strict"; // Start of use strict
     var contestDone=false
+
     var technologies=[
         ['HTML5', 90],
         ['CSS3', 50],
@@ -46,7 +47,7 @@
     $('.page-scroll a').bind('click', function(event) {
         event.preventDefault();
         if(contestDone){
-            slowScroll($(this),event);
+            slowScroll($(this).attr('href'),event);
         }else{
             askForContest($(this),event);
         }
@@ -68,11 +69,14 @@
     })
     $('#ok-image').click(function(){
         $('.close-modal').trigger( "click" );
-        $('#contestModalLink').trigger( "click" );
-       // $('#contestModalLinkOk').trigger( "click" );
+        setTimeout(function () {
+            $('#contestModalLinkOk').trigger( "click" );
+        },500);
+
     });
+
     $('#ko-image').click(function(){
-        contestDone=true;
+        contestDo();
         $('.close-modal').trigger( "click" );
         slowScroll($(this).data('href'),event);
     });
@@ -83,7 +87,7 @@
     $('#resolveBtn').click(function(){
         var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
         if(validateForm(cousins)){
-            contestDone=true;
+            contestDo();
             $('#wrongAnswer').addClass("hidden");
             $('#goodAnswer').removeClass("hidden");
             setTimeout(function () {
@@ -102,7 +106,6 @@
         showChart($(this));
     });
 
-
     function validateForm(cousins){
         if(cousins[0].val()==2 && cousins[1].val()==11 && cousins[2].val()==17){
             return true
@@ -114,7 +117,11 @@
         $('#ok-image').data('href',element.attr('href'));
         $('#ko-image').data('href',element.attr('href'));
 
-        //slowScroll(element,event);
+    }
+    function contestDo(){
+        window.scrollTo(0, 0);
+        $('#secret').show();
+        contestDone=true;
     }
     function slowScroll(href,event){
         $('html, body').stop().animate({
