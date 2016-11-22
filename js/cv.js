@@ -87,10 +87,10 @@
     $('#resolveBtn').click(function(){
         var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
         if(validateForm(cousins)){
-            contestDo();
             $('#wrongAnswer').addClass("hidden");
             $('#goodAnswer').removeClass("hidden");
             setTimeout(function () {
+                contestDo();
                 $('.close-modal').trigger( "click" );
                 slowScroll($('#ok-image').data('href'),event);
             },1000);

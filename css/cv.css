@@ -86,10 +86,10 @@ header .intro-text .skills {
   font-size: 1.25em;
   font-weight: 300;
 }
-#contestForm input {
+#contestQuestion input {
   width: 7%;
 }
-#contestForm .resolve {
+#contestQuestion .resolve {
   width: 13%;
 }
 @media (min-width: 768px) {
