@@ -48,6 +48,7 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                         <a id="contestModalLink" href="#contestModal" data-toggle="modal"></a>
+                        <a id="contestModalLinkOk" href="#contestModalOk" data-toggle="modal"></a>
                     </li>
                     <li class="page-scroll">
                         <a class="contestLink" href="#work">Exp. Laboral</a>
@@ -349,7 +350,7 @@
                             </p>
                             <ul class="list-inline item-details">
                                 <li><strong>Empresa:</strong>
-                                    Empresa de letreros electronicos
+                                    Aesys Iberica
                                 </li>
                                 <li>
                                     <strong>Fecha: </strong>2013
@@ -381,6 +382,57 @@
                             <img id="ko-image" src="img/work/ko.png" class="img-contest pull-right" alt="">
                             <p class="text-center" style="clear: both;">En caso de no tener tiempo para tonterias varias, pulsa la X</p>
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work-modal modal fade" id="contestModalOk" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Erase una vez...</h2>
+                            <hr class="star-primary">
+                            <p class="text-center">3 <strong>primos</strong> que sumadas sus edades, daba 30</p>
+                            <p class="text-center">teniendo en cuenta que estos primos <strong>no podian dividir su edad mas que con ella misma o en tantos como años ten&iacute;an</strong> y que ninguno ten&iacute;a m&aacute;s de 22 años,...</p>
+                            <div class="text-center" id="fakeQuestion">
+                                <p class="text-center">¿De que color es el oso?</p>
+                                <button class="text-center btn-info fakeAnswer">verde</button>
+                                <button class="text-center btn-info fakeAnswer">azul</button>
+                                <button class="text-center btn-info fakeAnswer">rojo</button>
+                            </div>
+                            <div class="hidden" id="contestQuestion">
+                                <form id="contestForm">
+                                <p class="text-center">Ahora en serio, ¿Cual es la edad de cada primo?</p>
+                                    <div class="text-center">
+                                        <label for="cousin1">Primo menor</label>
+                                        <input id="cousin1" type="number">
+                                        <label for="cousin2">Primo mediano</label>
+                                        <input id="cousin2" type="number">
+                                        <label for="cousin3">Primo mayor</label>
+                                        <input id="cousin3" type="number">
+                                        <input type="submit" id="resolveBtn" class="btn-success resolve" value="Resolver">
+                                    </div>
+                                </form>
+                                </br>
+                                <h3 class="bg-danger text-center hidden" id="wrongAnswer">Respuesta incorrecta!</h3>
+                                <h3 class="bg-success text-center hidden" id="goodAnswer">Respuesta Correcta!</h3>
+                            </div>
+                            <!--<hr class="star-primary">
+                            <p class="text-center">una familia de n&uacute;meros. La familia buscaba la forma sentirse mas unidos, y sumados, hacer piña.</p>
+                            <p class="text-center">Para ello, necesitaban el poder de unos simbolos que los sumara entre s&iacute;. La b&uacute;squeda no era f&aacute;cil, ya que los s<p class="text-center">Para ello, necesitaban el poder de unos simbolos que los sumara entre s&iacute;. La b&uacute;squeda no era f&aacute;cil, pero ademas, hab&iacute;a un inconveniente. Estos numeros eran familia, y hab&iacute;a muchos roces sin resolver. </p>
+                            mbolos se encontraban dispersos en el mundo, pero adem&aacute;s, hab&iacute;a un inconveniente. Estos numeros <strong>eran familia</strong></p>
+                            <p class="text-center">Eran tan eg&oacute;latras, que solo podian entenderse a si mismos <strong>dividirse en esencias de ellos mismos</strong></p>
+-->
                         </div>
                     </div>
                 </div>

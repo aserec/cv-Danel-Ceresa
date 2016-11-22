@@ -67,10 +67,34 @@
         }
     })
     $('#ok-image').click(function(){
+        $('.close-modal').trigger( "click" );
         $('#contestModalLink').trigger( "click" );
+       // $('#contestModalLinkOk').trigger( "click" );
     });
     $('#ko-image').click(function(){
+        contestDone=true;
+        $('.close-modal').trigger( "click" );
         slowScroll($(this).data('href'),event);
+    });
+    $('.fakeAnswer').click(function(){
+        $('#fakeQuestion').hide('slow');
+        $('#contestQuestion').removeClass('hidden');
+    });
+    $('#resolveBtn').click(function(){
+        var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
+        if(validateForm(cousins)){
+            contestDone=true;
+            $('#wrongAnswer').addClass("hidden");
+            $('#goodAnswer').removeClass("hidden");
+            setTimeout(function () {
+                $('.close-modal').trigger( "click" );
+                slowScroll($('#ok-image').data('href'),event);
+            },1000);
+
+        }else{
+            $('#goodAnswer').addClass("hidden");
+            $('#wrongAnswer').removeClass("hidden");
+        }
     });
 
 
@@ -78,14 +102,18 @@
         showChart($(this));
     });
 
-    function doContest(element,event){
-        //slowScroll(element,event);
+
+    function validateForm(cousins){
+        if(cousins[0].val()==2 && cousins[1].val()==11 && cousins[2].val()==17){
+            return true
+        }
     }
 
     function askForContest(element,event){
         $('#contestModalLink').trigger( "click" );
         $('#ok-image').data('href',element.attr('href'));
         $('#ko-image').data('href',element.attr('href'));
+
         //slowScroll(element,event);
     }
     function slowScroll(href,event){
