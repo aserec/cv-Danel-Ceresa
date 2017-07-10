@@ -5,17 +5,17 @@
     var contestDone=false
 
     var technologies=[
-        ['HTML5', 90],
-        ['CSS3', 50],
+        ['HTML5', 80],
+        ['CSS3', 45],
         ['Java', 85],
         ['Grails', 75],
         ['Spring', 65],
-        ['Hibernate', 70],
+        ['Hibernate', 65],
         ['PHP', 20],
         ['MySql/Oracle', 55],
         ['Cordova', 60],
         ['Angular', 25],
-        ['Javascript', 75],
+        ['Javascript', 70],
         ['Git', 95],
         ['Wordpress', 15]
     ];
@@ -87,8 +87,12 @@
     $('#resolveBtn').click(function(){
         var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
         if(validateForm(cousins)){
-            $('#wrongAnswer').addClass("hidden");
-            $('#goodAnswer').removeClass("hidden");
+            // $('#wrongAnswer').addClass("hidden");
+            // $('#goodAnswer').removeClass("hidden");
+
+            $('#wrongAnswer').hide();
+            $('#goodAnswer').hide();
+            $('#goodAnswer').fadeIn('slow');
             setTimeout(function () {
                 contestDo();
                 $('.close-modal').trigger( "click" );
@@ -96,8 +100,11 @@
             },1000);
 
         }else{
-            $('#goodAnswer').addClass("hidden");
-            $('#wrongAnswer').removeClass("hidden");
+            $('#wrongAnswer').hide();
+            $('#goodAnswer').hide();
+            $('#wrongAnswer').fadeIn('slow');
+            // $('#goodAnswer').addClass("hidden");
+            // $('#wrongAnswer').removeClass("hidden");
         }
     });
 
@@ -105,6 +112,8 @@
     $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
         showChart($(this));
     });
+
+
 
     function validateForm(cousins){
         if(cousins[0].val()==2 && cousins[1].val()==11 && cousins[2].val()==17){
@@ -133,7 +142,7 @@
     function showChart(element){
         var abilityArray=getAbilityArrayFromElementId(element[0].id);
         var chart = c3.generate({
-            bindto: '#'+element[0].id,
+            bindto: '#'+element.children('.chartContainer')[0].id,
             data: {
                 columns: [
                     abilityArray[0]

@@ -91,11 +91,32 @@ header .intro-text .skills {
   font-size: 1.25em;
   font-weight: 300;
 }
-#contestQuestion input {
-  width: 7%;
+#contestModalOk {
+  padding-right: 0px !important;
 }
 #contestQuestion .resolve {
-  width: 13%;
+  width: 30%;
+}
+#contestQuestion .resolveAnswer {
+  display: none;
+}
+#contestQuestion .input-group-vertical {
+  margin-bottom: 10px;
+}
+#contestQuestion .input-group-vertical .form-control {
+  border-radius: 0;
+}
+#contestQuestion .input-group-vertical .form-group {
+  margin-bottom: 0;
+}
+#contestQuestion .input-group-vertical .form-group:first-child .form-control {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#contestQuestion .input-group-vertical .form-group:last-child .form-control {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  top: -2px;
 }
 @media (min-width: 768px) {
   header .container {
@@ -531,4 +552,7 @@ fieldset[disabled] .btn-success.active {
   position: relative;
   font-size: 1em;
   padding: 0 0.25em;
+}
+.c3-axis-x .tick * {
+  display: none;
 }

@@ -98,13 +98,33 @@ header {
 		}
 	}
 }
+#contestModalOk{
+	padding-right: 0px !important;
+}
 #contestQuestion{
-	input{
-		width: 7%;
-
-	}
 	.resolve{
-		width: 13%;
+		width: 30%;
+	}
+	.resolveAnswer{
+		display: none;
+	}
+	.input-group-vertical {
+		margin-bottom: 10px;
+		.form-control {
+			border-radius: 0;
+		}
+		.form-group {
+			margin-bottom: 0;
+		}
+		.form-group:first-child .form-control {
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
+		.form-group:last-child .form-control {
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+			top: -2px;
+		}
 	}
 
 
@@ -516,4 +536,8 @@ footer {
 
 		}
 	}
+}
+
+.c3-axis-x .tick * {
+	display: none;
 }

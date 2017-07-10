@@ -176,15 +176,19 @@
                     <div class="col-lg-8 col-lg-offset-2" id="abilities">
                         <div  id="other-technologies">
                             <h3 class="star">Capacidades Tecnológicas</h3>
+                            <div class="chartContainer" id="technologyChart"></div>
                         </div>
                         <div  id="other-lang">
                             <h3 class="star">Idiomas</h3>
+                            <div class="chartContainer" id="languageChart"></div>
                         </div>
                         <div  id="other-personality">
                             <h3 class="star">Personalidad</h3>
+                            <div class="chartContainer" id="personalityChart"></div>
                         </div>
                         <div  id="other-transversal">
                             <h3 class="star">Capacidades Transversales</h3>
+                            <div class="chartContainer" id="transversalChart"></div>
                         </div>
 
 
@@ -411,7 +415,7 @@
             </div>
         </div>
     </div>
-    <div class="work-modal modal fade" id="contestModalOk" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="work-modal modal fade" id="contestModalOk" tabindex="0" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -429,31 +433,36 @@
                             <p class="text-center">teniendo en cuenta que estos primos <strong>no podian dividir su edad mas que con ella misma o en tantos como años ten&iacute;an</strong> y que ninguno ten&iacute;a m&aacute;s de 22 años,...</p>
                             <div class="text-center" id="fakeQuestion">
                                 <p class="text-center">¿De qué color es el oso?</p>
-                                <button class="text-center btn-info fakeAnswer">verde</button>
-                                <button class="text-center btn-info fakeAnswer">azul</button>
-                                <button class="text-center btn-info fakeAnswer">rojo</button>
+                                <button type="button" class="btn btn-default fakeAnswer">Rojo</button>
+                                <button type="button" class="btn btn-default fakeAnswer">Verde</button>
+                                <button type="button" class="btn btn-default fakeAnswer">Azul</button>
+
                             </div>
                             <div class="hidden" id="contestQuestion">
                                 <p class="text-center">Ahora en serio, ¿Cual es la edad de cada primo?</p>
-                                    <div class="text-center">
-                                        <label for="cousin1">Primo menor</label>
-                                        <input id="cousin1" type="number">
-                                        <label for="cousin2">Primo mediano</label>
-                                        <input id="cousin2" type="number">
-                                        <label for="cousin3">Primo mayor</label>
-                                        <input id="cousin3" type="number">
-                                        <button id="resolveBtn" class="btn-success resolve" value="Resolver">Resolver</button>
-                                    </div>
-                                </br>
-                                <h3 class="bg-danger text-center hidden" id="wrongAnswer">Respuesta incorrecta!</h3>
-                                <h3 class="bg-success text-center hidden" id="goodAnswer">Respuesta Correcta!</h3>
-                            </div>
-                            <!--<hr class="star-primary">
-                            <p class="text-center">una familia de n&uacute;meros. La familia buscaba la forma sentirse mas unidos, y sumados, hacer piña.</p>
-                            <p class="text-center">Para ello, necesitaban el poder de unos simbolos que los sumara entre s&iacute;. La b&uacute;squeda no era f&aacute;cil, ya que los s<p class="text-center">Para ello, necesitaban el poder de unos simbolos que los sumara entre s&iacute;. La b&uacute;squeda no era f&aacute;cil, pero ademas, hab&iacute;a un inconveniente. Estos numeros eran familia, y hab&iacute;a muchos roces sin resolver. </p>
-                            mbolos se encontraban dispersos en el mundo, pero adem&aacute;s, hab&iacute;a un inconveniente. Estos numeros <strong>eran familia</strong></p>
-                            <p class="text-center">Eran tan eg&oacute;latras, que solo podian entenderse a si mismos <strong>dividirse en esencias de ellos mismos</strong></p>
--->
+                                    <form action="#">
+                                        <fieldset class="input-group-vertical">
+                                            <div class="form-group">
+                                                <label for="cousin1">Primo menor</label>
+                                                <input id="cousin1" type="number" min="0" max="22" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cousin2">Primo mediano</label>
+                                                <input id="cousin2" type="number" min="0" max="22" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cousin3">Primo mayor</label>
+                                                <input id="cousin3" type="number" min="0" max="22" class="form-control">
+                                            </div>
+
+
+                                    </fieldset>
+                                        <div class="text-center">
+                                            <button id="resolveBtn" class="btn-success resolve" value="Resolver">Resolver</button>
+                                        </div>
+                                    </form>
+                                <h3 class="bg-danger text-center resolveAnswer" id="wrongAnswer">Respuesta incorrecta!</h3>
+                                <h3 class="bg-success text-center resolveAnswer" id="goodAnswer">Respuesta Correcta!</h3>
                         </div>
                     </div>
                 </div>
