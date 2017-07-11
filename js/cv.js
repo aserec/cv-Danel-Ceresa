@@ -5,9 +5,11 @@
     var i18n = window.domI18n({
         selector: '[data-translatable]',
         separator: ' // ',
-        languages: ['es-ES', 'en'],
-        defaultLanguage: 'es-ES'
+        languages: ['es', 'en'],
+        defaultLanguage: 'en'
     });
+
+    i18n.changeLanguage(getNavigatorLanguage());
 
     var technologies = [];
     technologies[0]=[
@@ -99,7 +101,6 @@
         if(contestDone){
             slowScroll($(this).attr('href'),event);
         }else{
-            i18n.changeLanguage(getNavigatorLanguage());
             askForContest($(this),event);
         }
     });
@@ -237,10 +238,10 @@
         }
     }
     function getLanguageIndex (){
-        if(window.navigator.language === "en-US" || window.navigator.language.indexOf("en") === 0 ){
-            return 1
-        }else{
+        if(window.navigator.language === "es" || window.navigator.language.indexOf("es") === 0 ){
             return 0
+        }else{
+            return 1
         }
     }
     function getNavigatorLanguage(){
