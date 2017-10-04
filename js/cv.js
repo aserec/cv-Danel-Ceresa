@@ -1,5 +1,5 @@
 (function($) {
-    "use strict"; // Start of use strict
+    "use strict";
     var contestDone=false
 
     var i18n = window.domI18n({
@@ -10,91 +10,6 @@
     });
 
     i18n.changeLanguage(getNavigatorLanguage());
-
-    var technologies = [];
-    technologies[0]=[
-        ['HTML5', 80],
-        ['CSS3', 45],
-        ['Java', 85],
-        ['Grails', 75],
-        ['Spring', 65],
-        ['Hibernate', 65],
-        ['PHP', 20],
-        ['MySql/Oracle', 55],
-        ['Cordova', 60],
-        ['Angular', 25],
-        ['Javascript', 70],
-        ['Git', 95],
-        ['Wordpress', 15]
-    ];
-    technologies[1]=[
-        ['HTML5', 80],
-        ['CSS3', 45],
-        ['Java', 85],
-        ['Grails', 75],
-        ['Spring', 65],
-        ['Hibernate', 65],
-        ['PHP', 20],
-        ['MySql/Oracle', 55],
-        ['Cordova', 60],
-        ['Angular', 25],
-        ['Javascript', 70],
-        ['Git', 95],
-        ['Wordpress', 15]
-    ];
-
-    var languages = [];
-    languages[0]=[
-        ['Euskera', 100],
-        ['Ingles', 65],
-        ['Catalan', 15],
-        ['Italiano', 30]
-    ];
-    languages[1]=[
-        ['Basque', 100],
-        ['Spanish', 100],
-        ['English', 65],
-        ['Catalan', 15],
-        ['Italian', 30]
-    ];
-    var personality = [];
-    personality[0]=[
-        ['Dinamismo', 100],
-        ['Alegria', 85],
-        ['Humor', 85],
-        ['Paciencia', 70],
-        ['Silencio', 10],
-        ['Imaginacion', 60],
-        ['Respeto', 95],
-        ['Trabajo en equipo', 70],
-        ['Sumision', 20]
-    ];
-    personality[1]=[
-        ['Dynamism', 100],
-        ['Happyness', 85],
-        ['Houmor', 85],
-        ['Patience', 70],
-        ['Silence', 10],
-        ['Imagination', 60],
-        ['Respect', 95],
-        ['Teamwork', 85],
-        ['Summision', 20]
-    ];
-    var trasnsversals = [];
-    trasnsversals[0]=[
-        ['Agile', 60],
-        ['Tareas administrativas', 20],
-        ['Formacion continua', 100],
-        ['Disponibilidad movimiento/traslado', 100],
-        ['Trato con cliente', 70]
-    ];
-    trasnsversals[1]=[
-        ['Agile', 60],
-        ['Administrative tasks', 20],
-        ['Continuous formation', 100],
-        ['Moving disposition', 100],
-        ['Client management', 70]
-    ];
 
     $('.page-scroll a').bind('click', function(event) {
         event.preventDefault();
@@ -136,15 +51,11 @@
         $('#fakeQuestion').hide('slow');
         $('#contestQuestion').removeClass('hidden');
     });
-    $('#resolveBtn').click(function(){
+    $('#resolveBtn').click(function(event){
+        event.preventDefault();
         var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
         if(validateForm(cousins)){
-            // $('#wrongAnswer').addClass("hidden");
-            // $('#goodAnswer').removeClass("hidden");
-
-            $('#wrongAnswer').hide();
-            $('#goodAnswer').hide();
-            $('#goodAnswer').fadeIn('slow');
+            showSuccessMessage();
             setTimeout(function () {
                 contestDo();
                 $('.close-modal').trigger( "click" );
@@ -152,25 +63,34 @@
             },1000);
 
         }else{
-            $('#wrongAnswer').hide();
-            $('#goodAnswer').hide();
-            $('#wrongAnswer').fadeIn('slow');
-            // $('#goodAnswer').addClass("hidden");
-            // $('#wrongAnswer').removeClass("hidden");
+            showErrorMessage();
         }
     });
-
 
     $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
         showChart($(this));
     });
 
 
-
     function validateForm(cousins){
         if(cousins[0].val()==2 && cousins[1].val()==11 && cousins[2].val()==17){
             return true
         }
+        else if(cousins[0].val()==2 && cousins[1].val()==5 && cousins[2].val()==23){
+            return true
+        }
+    }
+    
+    function showSuccessMessage(){
+        $('#wrongAnswer').hide();
+        $('#goodAnswer').hide();
+        $('#goodAnswer').fadeIn('slow');
+    }
+
+    function showErrorMessage(){
+        $('#goodAnswer').hide();
+        $('#wrongAnswer').hide();
+        $('#wrongAnswer').fadeIn('slow');
     }
 
     function askForContest(element,event){
@@ -246,12 +166,6 @@
     }
     function getNavigatorLanguage(){
         return window.navigator.language;
-        // return 'en'
     }
 
-})(jQuery); // End of use strict
-
-
-/*
-
-    */
+})(jQuery);
