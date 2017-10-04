@@ -52,11 +52,10 @@ hr.star-primary:after {
 
 hr.star-light {
     border-color: white;
-}
-
-hr.star-light:after {
-    background-color: @theme-success;
-    color: white;
+	:after {
+    	background-color: @theme-success;
+		color: white;
+	}
 }
 
 hr.star-primary {
@@ -130,22 +129,6 @@ header {
 
 }
 
-@media(min-width:768px) {
-	header {
-		.container {
-			padding-top: 200px;
-			padding-bottom: 100px;
-		}
-		.intro-text {
-			.name {
-				font-size: 4.75em;
-			}
-			.skills {
-				font-size: 1.75em;
-			}
-		}
-	}
-}
 
 .navbar-custom {
 	background: @theme-primary;
@@ -207,29 +190,6 @@ header {
 	}
 }
 
-@media(min-width:768px) {
-    .navbar-custom {
-        padding: 25px 0;
-        -webkit-transition: padding 0.3s;
-        -moz-transition: padding 0.3s;
-        transition: padding 0.3s;
-	    .navbar-brand {
-	        font-size: 2em;
-	        -webkit-transition: all 0.3s;
-	        -moz-transition: all 0.3s;
-	        transition: all 0.3s;
-	    }
-    }
-    .navbar-custom.affix {
-        padding: 10px 0;
-		.navbar-brand {
-	        font-size: 1.5em;
-	    }
-	}
-	.modal-content h2{
-		font-size: 3em;
-	}
-}
 
 section {
     padding: 100px 0;
@@ -244,34 +204,18 @@ section.success {
 	color: white;
 }
 
-@media(max-width:766px) {
-	.img-contest{
-		max-width: 130px;
-	}
-	section {
-		padding: 75px 0;
-		.first{
-			padding-top: 75px;
-		}
-	}
-	.modal-content h2{
-		font-size: 1.7em;
-	}
-	
-}
-
 #work {
-    .work-item {
-        margin: 0 0 15px;
+	.work-item {
+		margin: 0 0 15px;
         right: 0;
         .work-link {
-            display: block;
+			display: block;
             position: relative;
             max-width: 400px;
             margin: 0 auto;
 			min-height: 220px;
             .caption {
-                background: fade(@theme-success, 90%);
+				background: fade(@theme-success, 90%);
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -280,10 +224,10 @@ section.success {
                 -webkit-transition: all ease 0.5s;
                 -moz-transition: all ease 0.5s;
                 &:hover {
-                    opacity: 1;
+					opacity: 1;
                 }
                 .caption-content {
-                    position: absolute;
+					position: absolute;
                     width: 100%;
                     height: 20px;
                     font-size: 20px;
@@ -292,37 +236,29 @@ section.success {
                     margin-top: -12px;
                     color: white;
                     i {
-                        margin-top: -12px;
+						margin-top: -12px;
                     }
                     h3,
                     h4 {
-                        margin: 0;
+						margin: 0;
                     }
                 }
             }
         }
     }
     * {
-        z-index: 2;
-    }
-}
-
-@media(min-width:767px) {
-    #work {
-        .work-item {
-            margin: 0 0 30px;
-        }
+		z-index: 2;
     }
 }
 
 .floating-label-form-group {
-    position: relative;
+	position: relative;
     margin-bottom: 0;
     padding-bottom: 0.5em;
     border-bottom: 1px solid @gray-lighter;
     input,
     textarea {
-	    z-index: 1;
+		z-index: 1;
 	    position: relative;
 	    padding-right: 0;
 	    padding-left: 0;
@@ -334,7 +270,7 @@ section.success {
 	    resize: none;
     }
     label {
-	    display: block;
+		display: block;
 	    z-index: 0;
 	    position: relative;
 	    top: 2em;
@@ -350,26 +286,26 @@ section.success {
 	    transition: top 0.3s ease,opacity 0.3s ease;
     }
     &:not(:first-child) {
-	    padding-left: 14px;
+		padding-left: 14px;
 	    border-left: 1px solid @gray-lighter;
     }
 }
 
 .floating-label-form-group-with-value {
 	label {
-	    top: 0;
+		top: 0;
 	    opacity: 1;
 	}
 }
 
 .floating-label-form-group-with-focus {
 	label {
-	    color: @theme-success;
+		color: @theme-success;
 	}
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid @gray-lighter;
+	border-top: 1px solid @gray-lighter;
 }
 
 footer {
@@ -437,27 +373,27 @@ footer {
 }
 
 .scroll-top {
-    position: fixed;
+	position: fixed;
     right: 2%;
     bottom: 2%;
     width: 50px;
     height: 50px;
     z-index: 1049;
     .btn {
-    	font-size: 20px;
+		font-size: 20px;
 	    width: 50px;
 	    height: 50px;
 	    border-radius: 100%;
 	    line-height: 28px;
 	    &:focus {
-	    	outline: none;
+			outline: none;
 	    }
     }
 }
 
 .work-modal {
 	.modal-content {
-	    border-radius: 0;
+		border-radius: 0;
 	    background-clip: border-box;
 	    -webkit-box-shadow: none;
 	    box-shadow: none;
@@ -466,7 +402,7 @@ footer {
 	    padding: 100px 0;
 		font-size: 1.2em;
 		h2 {
-	    	margin: 0;
+			margin: 0;
 			text-align: center;
 		}
 		img {
@@ -475,10 +411,10 @@ footer {
 		.item-details {
 			margin: 30px 0;
 		}
-
+		
 	}
     .close-modal {
-        position: absolute;
+		position: absolute;
         width:75px;
         height:75px;
         background-color:transparent;
@@ -486,10 +422,10 @@ footer {
         right: 25px;
         cursor: pointer;
         &:hover {
-            opacity: 0.3;
+			opacity: 0.3;
         }
         .lr {
-            height:75px;
+			height:75px;
             width:1px;
             margin-left:35px;
             background-color:@theme-primary;
@@ -500,7 +436,7 @@ footer {
             /* Safari and Chrome */
             z-index:1051;
             .rl {
-                height:75px;
+				height:75px;
                 width:1px;
                 background-color:@theme-primary;
                 transform: rotate(90deg);
@@ -513,7 +449,7 @@ footer {
         }
     }
     .modal-backdrop {
-    	opacity: 0;
+		opacity: 0;
     	display: none;
     }
 }
@@ -536,14 +472,73 @@ footer {
 			font-family: FontAwesome;
 			display: inline-block;
 			position: relative;
-
+			
 			font-size: 1em;
 			padding: 0 0.25em;
-
+			
 		}
 	}
 }
 
 .c3-axis-x .tick * {
 	display: none;
+}
+
+@media(max-width:766px) {
+	.img-contest{
+		max-width: 130px;
+	}
+	section {
+		padding: 75px 0;
+		.first{
+			padding-top: 75px;
+		}
+	}
+	.modal-content h2{
+		font-size: 1.7em;
+	}
+	
+}
+
+@media(min-width:768px) {
+	header {
+		.container {
+			padding-top: 200px;
+			padding-bottom: 100px;
+		}
+		.intro-text {
+			.name {
+				font-size: 4.75em;
+			}
+			.skills {
+				font-size: 1.75em;
+			}
+		}
+	}
+	#work {
+		.work-item {
+			margin: 0 0 30px;
+        }
+    }
+	.navbar-custom {
+		padding: 25px 0;
+		-webkit-transition: padding 0.3s;
+		-moz-transition: padding 0.3s;
+		transition: padding 0.3s;
+		.navbar-brand {
+			font-size: 2em;
+			-webkit-transition: all 0.3s;
+			-moz-transition: all 0.3s;
+			transition: all 0.3s;
+		}
+	}
+	.navbar-custom.affix {
+		padding: 10px 0;
+		.navbar-brand {
+			font-size: 1.5em;
+		}
+	}
+	.modal-content h2{
+		font-size: 3em;
+	}
 }
