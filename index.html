@@ -78,7 +78,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img id="profile" class="img-responsive pointer" src="img/profile.png" alt="">
                     <div class="intro-text">
                         <span class="name">Danel Ceresa</span>
                         <hr class="star-light">
@@ -112,7 +112,7 @@
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/work/geograma.png" class="img-responsive" alt="">
+                            <img src="img/work/innofis.jpg" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="col-sm-4 col-md-6 work-item">
@@ -122,7 +122,7 @@
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/work/init.png" class="img-responsive" alt="">
+                            <img src="img/work/geograma.png" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="col-sm-4 col-md-6 work-item">
@@ -132,7 +132,7 @@
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/work/gfi.jpg" class="img-responsive" alt="">
+                            <img src="img/work/init.png" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="col-sm-4 col-md-6 work-item">
@@ -142,10 +142,9 @@
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/work/access.jpg" class="img-responsive" alt="">
+                            <img src="img/work/gfi.jpg" class="img-responsive" alt="">
                         </a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -309,8 +308,58 @@
             <i class="fa fa-chevron-up"></i>
         </a>
     </div>
-
     <div class="work-modal modal fade" id="workModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2 data-translatable>
+                                <span>Front-End developer</span>
+                                <span>Front-End developer</span>
+                            </h2>
+                            <hr class="star-primary">
+                            <img src="img/work/innofis.jpg" class="img-responsive img-centered" alt="">
+                            <p>
+                                <p data-translatable>
+                                    <span>Desarrollo de aplicaciones web para banca (Angular, Jquery, JqueryMobile)</span>
+                                    <span>Web applications development for banking (Angular, Jquery, JqueryMobile)</span>
+                                </p>
+                            </p>
+                            <p>
+                                <p data-translatable>
+                                    <span>Desarrollo de aplicaciones móviles para banca (Angular, Sencha touch, Cordova)</span>
+                                    <span>Mobile applications development for banking (Angular, Sencha touch, Cordova)</span>
+                                </p>
+                            </p>
+                            <ul class="list-inline item-details">
+                                <li><strong data-translatable>
+                                    <span>Empresa:</span>
+                                    <span>Company:</span>
+                                </strong>
+                                <a href="http://www.innofis.com/">Innofis</a>
+                                </li>
+                                <li>
+                                    <strong data-translatable>
+                                        <span>Fecha: </span>
+                                        <span>Date: </span>
+                                    </strong>07/2018 - Now
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="work-modal modal fade" id="workModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -334,8 +383,8 @@
                                     <span>Development of map and localization based wb applications (ExtJS, Javascript, Openlayers, Leaflet,...)</span>
                                 </p>
                                 <p data-translatable>
-                                    <span>Tareas de investigación y mejora de las herramientas utilizadas por el equipo de desarrolladores (Jenkins, Git, Gitlab, Servidores Linux,...)</span>
-                                    <span>Research and implementation of different development tools, as well as the working methodologies used for them (Jenkins, Git, Gitlab, Linux servers,...)</span>
+                                    <span>Tareas de DevOps (Jenkins, Git, Gitlab, Servidores Linux,...)</span>
+                                    <span>DevOps tasks (Jenkins, Git, Gitlab, Linux servers,...)</span>
                                 </p>
                             </p>
                             <ul class="list-inline item-details">
@@ -360,7 +409,7 @@
             </div>
         </div>
     </div>
-    <div class="work-modal modal fade" id="workModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="work-modal modal fade" id="workModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -418,7 +467,7 @@
             </div>
         </div>
     </div>
-    <div class="work-modal modal fade" id="workModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="work-modal modal fade" id="workModal4" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -467,53 +516,6 @@
                                         <span>Fecha: </span>
                                         <span>Date: </span>
                                     </strong>04/2013-09/2013
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="work-modal modal fade" id="workModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2 data-translatable>
-                                <span>Proyecto independiente</span>
-                                <span>Independant project</span>
-                            </h2>
-                            <hr class="star-primary">
-                            <img src="img/work/access.jpg" class="img-responsive img-centered" alt="">
-                            <p>
-                                <p data-translatable>
-                                    <span>Desarrollo de una aplicación en java que trasladaba bases de datos con una
-                                    concreta estructura de datos, a otra actualizada para una aplicación externa
-                                    nueva.</span>
-                                    <span>Development of a Java aplication that changed old Access databases to a new structured version</span>
-                                </p>
-                            </p>
-                            <ul class="list-inline item-details">
-                                <li><strong data-translatable>
-                                    <span>Empresa:</span>
-                                    <span>Company:</span>
-                                </strong>
-                                    Aesys Iberica
-                                </li>
-                                <li>
-                                    <strong data-translatable>
-                                        <span>Fecha: </span>
-                                        <span>Date: </span>
-                                    </strong>2013
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
