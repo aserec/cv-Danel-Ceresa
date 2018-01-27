@@ -1,6 +1,6 @@
 (function ($) {
     "use strict";
-    var contestDone = false
+    var doneContest = false
 
     var i18n = window.domI18n({
         selector: '[data-translatable]',
@@ -13,7 +13,7 @@
 
     $('.page-scroll a').bind('click', function (event) {
         event.preventDefault();
-        if (contestDone) {
+        if (doneContest) {
             slowScroll($(this).attr('href'), event);
         } else {
             askForContest($(this), event);
@@ -22,7 +22,7 @@
 
     $('#profile').bind('click', function (event) {
         event.preventDefault();
-        if (contestDone) {
+        if (doneContest) {
             slowScroll('#work', event);
         } else {
             askForContest($(this), event);
@@ -52,8 +52,8 @@
 
     });
 
-    $('#ko-image').click(function () {
-        contestDo();
+    $('.enoughWithThisShit').click(function () {
+        doContest();
         $('.close-modal').trigger("click");
         slowScroll('#work', event);
     });
@@ -69,7 +69,7 @@
         if (validateForm(cousins)) {
             showSuccessMessage();
             setTimeout(function () {
-                contestDo();
+                doContest();
                 $('.close-modal').trigger("click");
                 slowScroll($('#ok-image').data('href'), event);
             }, 1000);
@@ -111,10 +111,10 @@
         $('#ko-image').data('href', element.attr('href'));
     }
 
-    function contestDo() {
+    function doContest() {
         window.scrollTo(0, 0);
         $('#secret').show();
-        contestDone = true;
+        doneContest = true;
     }
 
     function slowScroll(href, event) {
