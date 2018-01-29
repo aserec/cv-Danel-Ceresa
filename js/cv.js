@@ -11,10 +11,6 @@
 
     i18n.changeLanguage(getNavigatorLanguage());
 
-    $(window).bind("beforeunload", function() { 
-        return confirm("Do you really want to close?"); 
-    })
-
     $('.page-scroll a').bind('click', function (event) {
         event.preventDefault();
         if (doneContest) {
