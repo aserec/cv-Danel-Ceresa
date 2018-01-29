@@ -191,12 +191,7 @@
     }
 
     function notifyContestEvent( eventLabel ) {
-        ga('send', {
-            hitType: 'event',
-            eventCategory: 'contest',
-            eventAction: 'click',
-            eventLabel: eventLabel
-          });
+        ga('send', 'event', 'contest', 'click', eventLabel);
     }
 
 })(jQuery);
