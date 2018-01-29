@@ -1,55 +1,31 @@
-// Freelancer Theme JavaScript
+(function ($) {
+    "use strict";
+    var doneContest = false
 
-(function($) {
-    "use strict"; // Start of use strict
-    var contestDone=false
+    var i18n = window.domI18n({
+        selector: '[data-translatable]',
+        separator: ' // ',
+        languages: ['es', 'en'],
+        defaultLanguage: 'en'
+    });
 
-    var technologies=[
-        ['HTML5', 90],
-        ['CSS3', 50],
-        ['Java', 85],
-        ['Grails', 75],
-        ['Spring', 65],
-        ['Hibernate', 70],
-        ['PHP', 20],
-        ['MySql/Oracle', 55],
-        ['Cordova', 60],
-        ['Angular', 25],
-        ['Javascript', 75],
-        ['Git', 95],
-        ['Wordpress', 15]
-    ];
-    var languages=[
-        ['Euskera', 100],
-        ['Ingles', 65],
-        ['Catalan', 15],
-        ['Italiano', 30]
-    ];
-    var personality=[
-        ['Dinamismo', 100],
-        ['Alegria', 85],
-        ['Humor', 85],
-        ['Paciencia', 70],
-        ['Silencio', 10],
-        ['Imaginacion', 60],
-        ['Respeto', 95],
-        ['Trabajo en equipo', 70],
-        ['Sumision', 20]
-    ];
-    var trasnsversals=[
-        ['Agile', 60],
-        ['Tareas administrativas', 20],
-        ['Formacion continua', 100],
-        ['Disponibilidad movimiento', 70],
-        ['Trato con cliente', 65]
-    ];
+    i18n.changeLanguage(getNavigatorLanguage());
 
-    $('.page-scroll a').bind('click', function(event) {
+    $('.page-scroll a').bind('click', function (event) {
         event.preventDefault();
-        if(contestDone){
-            slowScroll($(this).attr('href'),event);
-        }else{
-            askForContest($(this),event);
+        if (doneContest) {
+            slowScroll($(this).attr('href'), event);
+        } else {
+            askForContest($(this), event);
+        }
+    });
+
+    $('#profile').bind('click', function (event) {
+        event.preventDefault();
+        if (doneContest) {
+            slowScroll('#work', event);
+        } else {
+            askForContest($(this), event);
         }
     });
 
@@ -58,82 +34,106 @@
         offset: 51
     });
 
-    $('.navbar-collapse ul li a').click(function(){
-            $('.navbar-toggle:visible').click();
+    $('.navbar-collapse ul li a').click(function () {
+        $('.navbar-toggle:visible').click();
     });
 
     $('#mainNav').affix({
         offset: {
             top: 100
         }
-    })
-    $('#ok-image').click(function(){
-        $('.close-modal').trigger( "click" );
+    });
+
+    $('#ok-image').click(function () {
+        $('.close-modal').trigger("click");
         setTimeout(function () {
-            $('#contestModalLinkOk').trigger( "click" );
-        },500);
+            $('#contestModalLinkOk').trigger("click");
+        }, 500);
+        notifyContestEvent( 'Contest try' );
+      
 
     });
 
-    $('#ko-image').click(function(){
-        contestDo();
-        $('.close-modal').trigger( "click" );
-        slowScroll($(this).data('href'),event);
+    $('.enoughWithThisShit').click(function () {
+        doContest();
+        $('.close-modal').trigger("click");
+        slowScroll('#work', event);
+        notifyContestEvent( 'Enough with this shit' );
     });
-    $('.fakeAnswer').click(function(){
+
+    $('.fakeAnswer').click(function () {
         $('#fakeQuestion').hide('slow');
         $('#contestQuestion').removeClass('hidden');
     });
-    $('#resolveBtn').click(function(){
-        var cousins= [$('#cousin1'),$('#cousin2'),$('#cousin3')];
-        if(validateForm(cousins)){
-            $('#wrongAnswer').addClass("hidden");
-            $('#goodAnswer').removeClass("hidden");
+    
+    $('#resolveBtn').click(function (event) {
+        event.preventDefault();
+        var cousins = [$('#cousin1'), $('#cousin2'), $('#cousin3')];
+        if (validateForm(cousins)) {
+            showSuccessMessage();
             setTimeout(function () {
-                contestDo();
-                $('.close-modal').trigger( "click" );
-                slowScroll($('#ok-image').data('href'),event);
-            },1000);
+                doContest();
+                $('.close-modal').trigger("click");
+                slowScroll($('#ok-image').data('href'), event);
+            }, 1000);
 
-        }else{
-            $('#goodAnswer').addClass("hidden");
-            $('#wrongAnswer').removeClass("hidden");
+        } else {
+            showErrorMessage();
         }
     });
 
-
-    $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function() {
+    $('#other-lang, #other-transversal, #other-technologies, #other-personality').one('click', function () {
         showChart($(this));
     });
 
-    function validateForm(cousins){
-        if(cousins[0].val()==2 && cousins[1].val()==11 && cousins[2].val()==17){
+
+    function validateForm(cousins) {
+        if (cousins[0].val() == 2 && cousins[1].val() == 11 && cousins[2].val() == 17) {
+            return true
+        }
+        else if (cousins[0].val() == 2 && cousins[1].val() == 5 && cousins[2].val() == 23) {
             return true
         }
     }
 
-    function askForContest(element,event){
-        $('#contestModalLink').trigger( "click" );
-        $('#ok-image').data('href',element.attr('href'));
-        $('#ko-image').data('href',element.attr('href'));
+    function showSuccessMessage() {
+        $('#wrongAnswer').hide();
+        $('#goodAnswer').hide();
+        $('#goodAnswer').fadeIn('slow');
+        notifyContestEvent( 'Contest success' );
+    }
+
+    function showErrorMessage() {
+        $('#goodAnswer').hide();
+        $('#wrongAnswer').hide();
+        $('#wrongAnswer').fadeIn('slow');
+        notifyContestEvent( 'Contest error' );
 
     }
-    function contestDo(){
+
+    function askForContest(element, event) {
+        $('#contestModalLink').trigger("click");
+        $('#ok-image').data('href', element.attr('href'));
+        $('#ko-image').data('href', element.attr('href'));
+    }
+
+    function doContest() {
         window.scrollTo(0, 0);
         $('#secret').show();
-        contestDone=true;
+        doneContest = true;
     }
-    function slowScroll(href,event){
+
+    function slowScroll(href, event) {
         $('html, body').stop().animate({
             scrollTop: ($(href).offset().top - 50)
         }, 1250, 'easeInOutExpo');
-        if(event!=null){event.preventDefault()};
+        if (event != null) { event.preventDefault() };
     }
 
-    function showChart(element){
-        var abilityArray=getAbilityArrayFromElementId(element[0].id);
+    function showChart(element) {
+        var abilityArray = getAbilityArrayFromElementId(element[0].id, getLanguageIndex());
         var chart = c3.generate({
-            bindto: '#'+element[0].id,
+            bindto: '#' + element.children('.chartContainer')[0].id,
             data: {
                 columns: [
                     abilityArray[0]
@@ -146,23 +146,23 @@
         });
 
         setTimeout(function () {
-            _recursiveChart(1,abilityArray)
+            _recursiveChart(1, abilityArray)
         }, 1000);
 
-        function getAbilityArrayFromElementId(id){
-            if(id==="other-technologies") {
-                return technologies;
-            }else if (id==="other-lang"){
-                return languages;
-            }else if(id==="other-transversal"){
-                return trasnsversals;
-            }else{
-                return personality;
+        function getAbilityArrayFromElementId(id, languageId) {
+            if (id === "other-technologies") {
+                return technologies[languageId];
+            } else if (id === "other-lang") {
+                return languages[languageId];
+            } else if (id === "other-transversal") {
+                return trasnsversals[languageId];
+            } else {
+                return personality[languageId];
             }
         }
 
-        function _recursiveChart(index, abilityArray){
-            if(abilityArray[index]==null){
+        function _recursiveChart(index, abilityArray) {
+            if (abilityArray[index] == null) {
                 return false
             }
             chart.flow({
@@ -178,9 +178,25 @@
         }
     }
 
-})(jQuery); // End of use strict
+    function getLanguageIndex() {
+        if (window.navigator.language === "es" || window.navigator.language.indexOf("es") === 0) {
+            return 0
+        } else {
+            return 1
+        }
+    }
 
+    function getNavigatorLanguage() {
+        return window.navigator.language;
+    }
 
-/*
+    function notifyContestEvent( eventLabel ) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'contest',
+            eventAction: 'click',
+            eventLabel: eventLabel
+          });
+    }
 
-    */
+})(jQuery);
