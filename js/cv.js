@@ -49,6 +49,8 @@
         setTimeout(function () {
             $('#contestModalLinkOk').trigger("click");
         }, 500);
+        notifyContestEvent( 'Contest try' );
+      
 
     });
 
@@ -56,6 +58,7 @@
         doContest();
         $('.close-modal').trigger("click");
         slowScroll('#work', event);
+        notifyContestEvent( 'Enough with this shit' );
     });
 
     $('.fakeAnswer').click(function () {
@@ -97,12 +100,14 @@
         $('#wrongAnswer').hide();
         $('#goodAnswer').hide();
         $('#goodAnswer').fadeIn('slow');
+        notifyContestEvent( 'Contest success' );
     }
 
     function showErrorMessage() {
         $('#goodAnswer').hide();
         $('#wrongAnswer').hide();
         $('#wrongAnswer').fadeIn('slow');
+        notifyContestEvent( 'Contest error' );
 
     }
 
@@ -183,6 +188,15 @@
 
     function getNavigatorLanguage() {
         return window.navigator.language;
+    }
+
+    function notifyContestEvent( eventLabel ) {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'contest',
+            eventAction: 'click',
+            eventLabel: eventLabel
+          });
     }
 
 })(jQuery);
