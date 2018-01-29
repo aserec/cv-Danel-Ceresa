@@ -11,6 +11,10 @@
 
     i18n.changeLanguage(getNavigatorLanguage());
 
+    $(window).bind("beforeunload", function() { 
+        return confirm("Do you really want to close?"); 
+    })
+
     $('.page-scroll a').bind('click', function (event) {
         event.preventDefault();
         if (doneContest) {
@@ -103,6 +107,7 @@
         $('#goodAnswer').hide();
         $('#wrongAnswer').hide();
         $('#wrongAnswer').fadeIn('slow');
+
     }
 
     function askForContest(element, event) {
