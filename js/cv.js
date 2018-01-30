@@ -9,7 +9,6 @@
         defaultLanguage: 'en'
     });
 
-    ga('create', 'UA-113266002-2');
     i18n.changeLanguage(getNavigatorLanguage());
 
     $('.page-scroll a').bind('click', function (event) {
@@ -192,6 +191,7 @@
     }
 
     function notifyContestEvent( eventLabel ) {
+        ga('create', 'UA-113266002-2');
         ga('send', 'event', 'contest', 'click', eventLabel);
     }
 
