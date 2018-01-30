@@ -10,6 +10,8 @@
     });
 
     i18n.changeLanguage(getNavigatorLanguage());
+    //initializae Google Analytics
+    ga('create', 'UA-113266002-2');
 
     $('.page-scroll a').bind('click', function (event) {
         event.preventDefault();
