@@ -1,31 +1,31 @@
 var technologies = [];
 technologies[0]=[
     ['HTML5', 80],
-    ['CSS3', 45],
+    ['CSS3', 55],
     ['Java', 85],
     ['Grails', 75],
     ['Spring', 65],
     ['Hibernate', 65],
     ['PHP', 20],
-    ['MySql/Oracle', 55],
+    ['MySql/Oracle', 40],
     ['Cordova', 60],
-    ['Angular', 25],
-    ['Javascript', 70],
+    ['Angular', 70],
+    ['Javascript', 85],
     ['Git', 95],
     ['Wordpress', 15]
 ];
 technologies[1]=[
     ['HTML5', 80],
-    ['CSS3', 45],
+    ['CSS3', 55],
     ['Java', 85],
     ['Grails', 75],
     ['Spring', 65],
     ['Hibernate', 65],
     ['PHP', 20],
-    ['MySql/Oracle', 55],
+    ['MySql/Oracle', 40],
     ['Cordova', 60],
-    ['Angular', 25],
-    ['Javascript', 70],
+    ['Angular', 70],
+    ['Javascript', 85],
     ['Git', 95],
     ['Wordpress', 15]
 ];
